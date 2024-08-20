@@ -8,33 +8,33 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        int numero;
+        int numero = 0;
         int quantidade = 0;
         int i = 0;
-        char resposta = 'S';
         List<Integer>  pares = new ArrayList<>();
         List<Integer>  impares = new ArrayList<>();
         
-        while(resposta == 'S' || resposta == 's'){
+        while(numero >= 0){
             
             quantidade++;
 
             System.out.println("Digite um número: ");
             numero = sc.nextInt();
             
-            if (numero % 2 == 0) {
+            if (numero % 2 == 0 && numero >= 0) {
                 
                 pares.add(numero);
                 
             } else {
                 
-                impares.add(numero);
-                
+                if (numero >= 0) {
+                    
+                    impares.add(numero);
+
+                }
+
             }
 
-        
-            System.out.println("Deseja continuar? (S - Sim / N - Não)");
-            resposta = sc.next().charAt(0);
         }
         
         System.out.println("TOTAL DE NÚMEROS PARES: " + pares.size());
